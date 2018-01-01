@@ -1,0 +1,14 @@
+<html>
+  <head>
+  <title>Performance marks demo #2: measures</title>
+  <script>performance.mark('parsing:css:start');</script>
+  <link rel="stylesheet" href="shiny-style.css">
+  <script>
+    performance.mark('parsing:css:end');
+    performance.measure('blocking-styles', 'parsing:css:start', 'parsing:css:end');
+  </script>
+  </head>
+  <body>
+    <p>What a beautiful text</p>
+  </body>
+</html>
